@@ -1,7 +1,7 @@
 # Protocol Buffers for Node
 A wrapper in Node for the compiled protoc from https://github.com/google/protobuf.
 
-## Versions
+## Version
 It's currently using Protocol Buffers `v3.2.0`.
 
 ## Platforms
