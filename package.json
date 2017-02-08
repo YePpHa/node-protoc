@@ -1,0 +1,21 @@
+{
+  "name": "protoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "test": "node scripts/test.js"
+  },
+  "author": "Jeppe Rune Mortensen <jepperm@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "glob": "^7.1.1",
+    "mkdirp": "^0.5.1",
+    "node-uuid": "^1.4.7",
+    "request": "^2.79.0",
+    "rimraf": "^2.5.4",
+    "unzip": "^0.1.11",
+    "vinyl": "^2.0.1"
+  }
+}
