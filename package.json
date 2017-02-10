@@ -1,6 +1,6 @@
 {
   "name": "protoc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool for converting proto buffers (.proto) files into javascript files usable in Closure Compiler with Closure Library.",
   "main": "index.js",
   "scripts": {
