@@ -22,7 +22,7 @@ exports.closure = function(files, options, callback) {
 
   var cwd = process.cwd();
   var absoluteOutputPath = path.resolve(cwd, options.outputPath);
-  var relative = path.relative(cwd, absoluteOutputPath);
+  var relative = path.relative(absoluteOutputPath, cwd);
 
   var args = [
     "--js_out=one_output_file_per_input_file,binary:."
