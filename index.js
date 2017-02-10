@@ -7,13 +7,51 @@ var uuid = require("node-uuid");
 var mkdirp = require("mkdirp");
 var glob = require("glob");
 
+exports.protoc = function(args, options, callback) {
+  cp.execFile(protoc, args, options, callback);
+};
+
+exports.closure = function(files, options, callback) {
+  if (!callback) {
+    callback = options;
+    options = null;
+  }
+
+  options.imports = options.imports || [];
+  options.outputPath = options.outputPath || "./";
+
+  var cwd = process.cwd();
+  var absoluteOutputPath = path.resolve(cwd, options.outputPath);
+  var relative = path.relative(cwd, absoluteOutputPath);
+
+  var args = [
+    "--js_out=one_output_file_per_input_file,binary:."
+  ];
+
+  for (var i = 0; i < options.imports.length; i++) {
+    args.push("-I", path.join(relative, options.imports[i]));
+  }
+
+  for (var i = 0; i < files.length; i++) {
+    args.push(path.join(relative, files[i]));
+  }
+
+  mkdirp(options.outputPath, function(err) {
+    if (err) return callback(err);
+
+    exports.protoc(args, {
+      "cwd": options.outputPath
+    }, callback);
+  });
+};
+
 /**
  * Converts .proto files to .js files that can be used in Google Closure
  * Compiler.
  * The generated .js files require the files in
  * https://github.com/google/protobuf/tree/master/js.
  * @param {?Array<string>} files the proto files.
- * @param {?function(?Error, ?Array<Vinyl>)} callback the callback method. 
+ * @param {?function(?Error, ?Array<Vinyl>)} callback the callback method.
  */
 exports.library = function(files, callback) {
   var dirpath = "tmp";
@@ -22,7 +60,7 @@ exports.library = function(files, callback) {
   mkdirp("tmp", function(err) {
     if (err) return callback(err);
 
-    cp.execFile(protoc, ["--js_out=library=" + jsFile + ",binary:."].concat(files), function(err, stdout, stderr) {
+    exports.protoc(["--js_out=library=" + jsFile + ",binary:."].concat(files), function(err, stdout, stderr) {
       if (err) return callback(err);
 
       if (fs.existsSync(jsFile + ".js")) {
