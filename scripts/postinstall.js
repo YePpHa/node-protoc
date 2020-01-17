@@ -5,13 +5,15 @@ var unzip = require("unzipper");
 var mkdirp = require("mkdirp");
 var protoc = require("../protoc.js");
 
+const protoVersion = "3.11.2";
+
 var releases = {
-  "win32_x86_32": "https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-win32.zip",
-  "win32_x86_64": "https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-win32.zip",
-  "linux_x86_32": "https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_32.zip",
-  "linux_x86_64": "https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-linux-x86_64.zip",
-  "darwin_x86_32": "https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-osx-x86_32.zip",
-  "darwin_x86_64": "https://github.com/google/protobuf/releases/download/v3.2.0/protoc-3.2.0-osx-x86_64.zip"
+  "win32_x86_32": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-win32.zip`,
+  "win32_x86_64": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-win32.zip`,
+  "linux_x86_32": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-linux-x86_32.zip`,
+  "linux_x86_64": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-linux-x86_64.zip`,
+  "darwin_x86_32": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-osx-x86_32.zip`,
+  "darwin_x86_64": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-osx-x86_64.zip`
 };
 
 var platform = process.platform;
