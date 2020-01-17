@@ -1,7 +1,7 @@
 var request = require('request');
 var fs = require("fs");
 var path = require("path");
-var unzip = require("unzip");
+var unzip = require("unzipper");
 var mkdirp = require("mkdirp");
 var protoc = require("../protoc.js");
 
@@ -33,7 +33,7 @@ if (releases[release]) {
           entry.pipe(fs.createWriteStream(fullpath))
           .on("finish", function() {
             if (protoc === fullpath) {
-              fs.chmod(fullpath, 0755, function(err) {
+              fs.chmod(fullpath, 0o755, function(err) {
                 if (err) throw err;
               });
             }

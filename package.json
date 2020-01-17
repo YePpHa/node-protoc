@@ -10,12 +10,12 @@
   "author": "Jeppe Rune Mortensen <jepperm@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "glob": "^7.1.1",
+    "glob": "^7.1.6",
     "mkdirp": "^0.5.1",
-    "node-uuid": "^1.4.7",
-    "request": "^2.79.0",
-    "rimraf": "^2.5.4",
-    "unzip": "^0.1.11",
-    "vinyl": "^2.0.1"
+    "node-uuid": "^1.4.8",
+    "request": "^2.88.0",
+    "rimraf": "^3.0.0",
+    "unzipper": "^0.10.5",
+    "vinyl": "^2.2.0"
   }
 }
