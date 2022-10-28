@@ -7,8 +7,15 @@
     "postinstall": "node scripts/postinstall.js",
     "test": "node scripts/test.js"
   },
+  "bin": {
+    "protoc": "./protoc.sh"
+  },
   "author": "Jeppe Rune Mortensen <jepperm@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YePpHa/node-protoc.git"
+  },
   "dependencies": {
     "glob": "^7.1.6",
     "mkdirp": "^0.5.1",
