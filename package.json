@@ -1,6 +1,6 @@
 {
   "name": "protoc",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A tool for converting proto buffers (.proto) files into javascript files usable in Closure Compiler with Closure Library.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "node scripts/test.js"
   },
   "bin": {
-    "protoc": "./protoc.sh"
+    "protoc": "./bin/protoc.sh"
   },
   "author": "Jeppe Rune Mortensen <jepperm@gmail.com>",
   "license": "MIT",
@@ -17,12 +17,13 @@
     "url": "git+https://github.com/YePpHa/node-protoc.git"
   },
   "dependencies": {
-    "glob": "^7.1.6",
-    "mkdirp": "^0.5.1",
-    "node-uuid": "^1.4.8",
-    "request": "^2.88.0",
-    "rimraf": "^3.0.0",
-    "unzipper": "^0.10.5",
-    "vinyl": "^2.2.0"
+    "glob": "^7.2.3",
+    "mkdirp": "^0.5.6",
+    "node-fetch": "^3.2.10",
+    "request": "^2.88.2",
+    "rimraf": "^3.0.2",
+    "unzipper": "^0.10.11",
+    "uuid": "^9.0.0",
+    "vinyl": "^2.2.1"
   }
 }

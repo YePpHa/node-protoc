@@ -1,18 +1,19 @@
 #!/usr/bin/env node
 
-const { protoc } = require('./')
+const { protoc } = require("../");
 
 protoc(process.argv.slice(2), {}, (err, stdout, stderr) => {
   if (err) {
-    console.error(err)
-    process.exit(1)
+    console.error(err);
+    process.exit(1);
+    return;
   }
 
   if (stdout) {
-    console.info(stdout)
+    console.info(stdout);
   }
 
   if (stderr) {
-    console.error(stderr)
+    console.error(stderr);
   }
 })

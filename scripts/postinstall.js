@@ -1,13 +1,12 @@
-var request = require('request');
-var fs = require("fs");
-var path = require("path");
-var unzip = require("unzipper");
-var mkdirp = require("mkdirp");
-var protoc = require("../protoc.js");
+const fs = require("fs");
+const path = require("path");
+const unzip = require("unzipper");
+const mkdirp = require("mkdirp");
+const protoc = require("../protoc.js");
 
 const protoVersion = "3.20.3";
 
-var releases = {
+const releases = {
   "win32_x86_32": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-win32.zip`,
   "win32_x86_64": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-win32.zip`,
   "linux_x86_32": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-linux-x86_32.zip`,
@@ -15,33 +14,45 @@ var releases = {
   "darwin_x86_64": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-osx-x86_64.zip`
 };
 
-var platform = process.platform;
-var arch = process.arch === "x64" ? "x86_64" : "x86_32";
-var release = platform + "_" + arch;
+const platform = process.platform;
+const arch = process.arch === "x64" ? "x86_64" : "x86_32";
+const release = platform + "_" + arch;
+const protocDirectory = path.join(__dirname, "..", "protoc");
 
-if (releases[release]) {
-  request(releases[release])
+(async () => {
+  if (!releases[release]) {
+    throw new Error(`Unsupported platform: ${release}. Was not able to find a proper protoc version.`);
+  }
+
+  fs.rmSync(protocDirectory, { recursive: true, force: true });
+
+  const fetch = await import("node-fetch");
+  const response = await fetch.default(releases[release]);
+  response
+    .body
     .pipe(unzip.Parse())
-    .on("entry", function(entry) {
-      var isFile = "File" === entry.type;
-      var isDir = "Directory" === entry.type;
-      var fullpath = path.join(__dirname, "..", "protoc", entry.path);
-      var directory = isDir ? fullpath : path.dirname(fullpath);
+    .on("entry", entry => {
+      const isFile = "File" === entry.type;
+      const isDir = "Directory" === entry.type;
+      const fullpath = path.join(protocDirectory, entry.path);
+      const directory = isDir ? fullpath : path.dirname(fullpath);
 
-      mkdirp(directory, function(err) {
-        if (err) throw err;
+      mkdirp(directory, err => {
+        if (err) {
+          throw err;
+        }
         if (isFile) {
           entry.pipe(fs.createWriteStream(fullpath))
           .on("finish", function() {
             if (protoc === fullpath) {
               fs.chmod(fullpath, 0o755, function(err) {
-                if (err) throw err;
+                if (err) {
+                  throw err;
+                }
               });
             }
           });
         }
       });
     });
-} else {
-  throw new Error(`Unsupported platform: ${release}. Was not able to find a proper protoc version.`);
-}
+})();

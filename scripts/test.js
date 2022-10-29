@@ -1,6 +1,7 @@
-var protoc = require("../index.js");
+const protoc = require("../index.js");
 protoc.library(["protoc/include/google/protobuf/timestamp.proto"], function(err, files) {
-  if (err) return console.error(err);
-
-
+  if (err) {
+    console.error(err);
+    return;
+  }
 });

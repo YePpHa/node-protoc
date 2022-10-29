@@ -1,11 +1,11 @@
-var path = require("path");
-var cp = require("child_process");
-var fs = require("fs");
-var protoc = require("./protoc.js");
-var Vinyl = require("vinyl");
-var uuid = require("node-uuid");
-var mkdirp = require("mkdirp");
-var glob = require("glob");
+const path = require("path");
+const cp = require("child_process");
+const fs = require("fs");
+const protoc = require("./protoc.js");
+const Vinyl = require("vinyl");
+const uuid = require("uuid");
+const mkdirp = require("mkdirp");
+const glob = require("glob");
 
 exports.protoc = function(args, options, callback) {
   cp.execFile(protoc, args, options, callback);
@@ -20,11 +20,11 @@ exports.closure = function(files, options, callback) {
   options.imports = options.imports || [];
   options.outputPath = options.outputPath || "./";
 
-  var cwd = process.cwd();
-  var absoluteOutputPath = path.resolve(cwd, options.outputPath);
-  var relative = path.relative(absoluteOutputPath, cwd);
+  const cwd = process.cwd();
+  const absoluteOutputPath = path.resolve(cwd, options.outputPath);
+  const relative = path.relative(absoluteOutputPath, cwd);
 
-  var args = [
+  const args = [
     "--js_out=one_output_file_per_input_file,binary:."
   ];
 
@@ -37,7 +37,10 @@ exports.closure = function(files, options, callback) {
   }
 
   mkdirp(options.outputPath, function(err) {
-    if (err) return callback(err);
+    if (err) {
+      callback(err);
+      return;
+    }
 
     exports.protoc(args, {
       "cwd": options.outputPath
@@ -58,17 +61,29 @@ exports.library = function(files, callback) {
   var filename = uuid.v4();
   var jsFile = path.join(dirpath, filename);
   mkdirp("tmp", function(err) {
-    if (err) return callback(err);
+    if (err) {
+      callback(err);
+      return;
+    }
 
     exports.protoc(["--js_out=library=" + jsFile + ",binary:."].concat(files), function(err, stdout, stderr) {
-      if (err) return callback(err);
+      if (err) {
+        callback(err);
+        return;
+      }
 
       if (fs.existsSync(jsFile + ".js")) {
         fs.readFile(jsFile + ".js", function(err, contents) {
-          if (err) return callback(err);
+          if (err) {
+            callback(err);
+            return;
+          }
 
           fs.unlink(jsFile + ".js", function(err) {
-            if (err) return callback(err);
+            if (err) {
+              callback(err);
+              return;
+            }
 
             fs.rmdir(dirpath, function() {
               callback(null, [new Vinyl({
@@ -84,7 +99,10 @@ exports.library = function(files, callback) {
         glob("**/*.js", {
           "cwd": jsFile
         }, function(err, matches) {
-          if (err) return callback(err, null);
+          if (err) {
+            callback(err, null);
+            return;
+          }
 
           var files = matches.map(function(match) {
             return new Vinyl({
@@ -96,7 +114,10 @@ exports.library = function(files, callback) {
           });
 
           rimraf(jsFile, function(err) {
-            if (err) return callback(err);
+            if (err) {
+              callback(err);
+              return;
+            }
 
             fs.rmdir(dirpath, function() {
               callback(null, files);

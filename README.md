@@ -14,8 +14,11 @@ There's currently no documentation. Hopefully this example will help.
 var protoc = require("protoc");
 
 protoc.library(["path/to/file.proto", "path/to/file2.proto"], function(err, files) {
-  if (err) return console.error(err);
-  
+  if (err) {
+    console.error(err);
+    return;
+  }
+
   // Handle the JavaScript Vinyl files.
   // These files can be used in Google Closure Compiler,
   // but they require the files in
@@ -23,4 +26,9 @@ protoc.library(["path/to/file.proto", "path/to/file2.proto"], function(err, file
   
   // ...
 });
+```
+
+It's also possible to directly call the protoc binary file:
+```
+npx protoc --help
 ```
