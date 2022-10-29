@@ -1,6 +1,6 @@
 {
   "name": "protoc",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A tool for converting proto buffers (.proto) files into javascript files usable in Closure Compiler with Closure Library.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "node scripts/test.js"
   },
   "bin": {
-    "protoc": "./bin/protoc.sh"
+    "protoc": "./bin/protoc.js"
   },
   "author": "Jeppe Rune Mortensen <jepperm@gmail.com>",
   "license": "MIT",
