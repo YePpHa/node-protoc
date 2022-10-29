@@ -49,7 +49,7 @@ exports.closure = function(files, options, callback) {
  * Converts .proto files to .js files that can be used in Google Closure
  * Compiler.
  * The generated .js files require the files in
- * https://github.com/google/protobuf/tree/master/js.
+ * https://github.com/protocolbuffers/protobuf/tree/v3.20.3/js.
  * @param {?Array<string>} files the proto files.
  * @param {?function(?Error, ?Array<Vinyl>)} callback the callback method.
  */
