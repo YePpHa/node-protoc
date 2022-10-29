@@ -1,8 +1,8 @@
 # Protocol Buffers for Node
-A wrapper in Node for the compiled protoc from https://github.com/google/protobuf.
+A wrapper in Node for the compiled protoc from https://github.com/protocolbuffers/protobuf.
 
 ## Version
-It's currently using Protocol Buffers `v3.11.2`.
+It's currently using Protocol Buffers `v3.20.3`.
 
 ## Platforms
 Google only provides binary files for Windows, Linux and OSX in x86_64 and x86_32.

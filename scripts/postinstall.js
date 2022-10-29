@@ -5,15 +5,14 @@ var unzip = require("unzipper");
 var mkdirp = require("mkdirp");
 var protoc = require("../protoc.js");
 
-const protoVersion = "3.11.2";
+const protoVersion = "3.20.3";
 
 var releases = {
-  "win32_x86_32": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-win32.zip`,
-  "win32_x86_64": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-win32.zip`,
-  "linux_x86_32": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-linux-x86_32.zip`,
-  "linux_x86_64": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-linux-x86_64.zip`,
-  "darwin_x86_32": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-osx-x86_32.zip`,
-  "darwin_x86_64": `https://github.com/google/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-osx-x86_64.zip`
+  "win32_x86_32": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-win32.zip`,
+  "win32_x86_64": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-win32.zip`,
+  "linux_x86_32": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-linux-x86_32.zip`,
+  "linux_x86_64": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-linux-x86_64.zip`,
+  "darwin_x86_64": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-osx-x86_64.zip`
 };
 
 var platform = process.platform;
@@ -44,5 +43,5 @@ if (releases[release]) {
       });
     });
 } else {
-  throw new Error("Unsupported platform. Was not able to find a proper protoc version.");
+  throw new Error(`Unsupported platform: ${release}. Was not able to find a proper protoc version.`);
 }
