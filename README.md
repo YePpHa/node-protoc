@@ -2,10 +2,10 @@
 A wrapper in Node for the compiled protoc from https://github.com/protocolbuffers/protobuf.
 
 ## Version
-It's currently using Protocol Buffers `v3.20.3`.
+It's currently using Protocol Buffers `v21.9`.
 
 ## Platforms
-Google only provides binary files for Windows, Linux and OSX in x86_64 and x86_32.
+Google only provides binary files for Windows, Linux and macOS in aarch64, x86_64 and x86_32.
 
 ## Examples
 There's currently no documentation. Hopefully this example will help.
