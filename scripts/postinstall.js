@@ -15,7 +15,8 @@ const releases = {
 };
 
 const platform = process.platform;
-const arch = process.arch === "x64" ? "x86_64" : "x86_32";
+const arch =
+  process.arch === "x64" || process.arch === "arm64" ? "x86_64" : "x86_32";
 const release = platform + "_" + arch;
 const protocDirectory = path.join(__dirname, "..", "protoc");
 
