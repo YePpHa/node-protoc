@@ -1,1 +1,1 @@
-Forked from *node-protoc* to add additional languages 
+Forked from [node-protoc](https://github.com/YePpHa/node-protoc) to add additional languages 
