@@ -1,6 +1,7 @@
 # protoc-helper
 multilanguage  grpc protobuff generator for node. forked from [node-protoc](https://github.com/YePpHa/node-protoc) to add additional languages.
 uses the protoc binary and supports multiple platforms and processors.
+npm: `npm i protoc-helper`
 
 you can find  a demo in the scripts folder:
 

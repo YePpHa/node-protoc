@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "build": "npm run build",
+    "deploy": "npm publish"
   },
   "bin": {
     "protoc": "./bin/protoc"
@@ -28,10 +30,5 @@
     "unzipper": "^0.10.11",
     "uuid": "^9.0.0",
     "vinyl": "^2.2.1"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "restricted",
-    "token": "{{NPM_TOKEN}}"
-   }
+  }
 }
