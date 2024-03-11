@@ -1,6 +1,6 @@
 {
   "name": "@ji-podhead/protoc-helper",
-  "version": "1.0.6",
+  "version": "1.0.5",
   "description": "multilanguage  grpc protobuff generator for node. forked from node-protoc.git. ",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,9 @@
     "url": "https://github.com/ji-podhead/protoc-helper"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "registry": "https://npm.pkg.github.com",
+    "access": "public",
+    "token": "{{NPM_TOKEN}}"
   },
   "dependencies": {
     "@ji-podhead/protoc-helper": "^1.0.3",
