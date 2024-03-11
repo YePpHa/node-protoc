@@ -1,7 +1,9 @@
 # protoc-helper
 multilanguage  grpc protobuff generator for node. forked from [node-protoc](https://github.com/YePpHa/node-protoc) to add additional languages.
 uses the protoc binary and supports multiple platforms and processors.
-npm: `npm i protoc-helper`
+
+## Install
+`npm i @ji-podhead/protoc-helper`
 
 you can find  a demo in the scripts folder:
 
@@ -14,7 +16,7 @@ const dir = String(__dirname)+"/"
 const generator = new ProtobuffGenerator()
 generator.generateProtobuf("go",dir,"helloworld.proto",dir)
 ```
-# NPX and additional args
+## NPX and additional args
 
 you can use `npx protoc` or add your own arguments in the index.js:
 ```
