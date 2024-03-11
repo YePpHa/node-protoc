@@ -16,6 +16,9 @@
     "type": "git",
     "url": "git+https://github.com/ji-podhead/protoc-helper"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@ji-podhead"
+  },
   "dependencies": {
     "glob": "^7.2.3",
     "mkdirp": "^0.5.6",
@@ -25,5 +28,10 @@
     "unzipper": "^0.10.11",
     "uuid": "^9.0.0",
     "vinyl": "^2.2.1"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "restricted",
+    "token": "{{NPM_TOKEN}}"
+   }
 }
