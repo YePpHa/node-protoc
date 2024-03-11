@@ -1,7 +1,6 @@
-const protoc = require("../index.js");
-protoc.library(["protoc/include/google/protobuf/timestamp.proto"], function(err, files) {
-  if (err) {
-    console.error(err);
-    return;
-  }
-});
+const { ProtobuffGenerator } = require('../index');
+
+console.log(__dirname)
+const dir = String(__dirname)+"/"
+const generator = new ProtobuffGenerator()
+generator.generateProtobuf("go",dir,"helloworld.proto",dir)
