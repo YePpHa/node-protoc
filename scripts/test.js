@@ -1,3 +1,4 @@
+//newtest
 const { ProtobuffGenerator } = require('../index');
 
 console.log(__dirname)
