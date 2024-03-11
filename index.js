@@ -82,10 +82,12 @@ class ProtobuffGenerator {
                 const protocGenTsPath = `${process.cwd()}/frontend/node_modules/ts-protoc-gen/bin/protoc-gen-ts`; // todo
                 const outDir = `${process.cwd()}/frontend/src`;
                 const protoPath = `${process.cwd()}/protos/`;
-                command = `
-            npx protoc --plugin="protoc-gen-ts=${protocGenTsPath}" --ts_out="service=grpc-node,mode=grpc-js:${outDir}" --js_out="import_style=commonjs,binary:${outDir}" --proto_path="${protoPath}" ${proto_path}
-            npx protoc --plugin="protoc-gen-ts=${protocGenTsPath}" --ts_out="service=grpc-web:${outDir}" --js_out="import_style=commonjs,binary:${outDir}" --proto_path="${protoPath}" ${proto_path}
-            `;
+          //      command = `
+          //  npx protoc --plugin="protoc-gen-ts=${protocGenTsPath}" --ts_out="service=grpc-node,mode=grpc-js:${outDir}" --js_out="import_style=commonjs,binary:${outDir}" --proto_path="${protoPath}" ${proto_path}
+          //  npx protoc --plugin="protoc-gen-ts=${protocGenTsPath}" --ts_out="service=grpc-web:${outDir}" --js_out="import_style=commonjs,binary:${outDir}" --proto_path="${protoPath}" ${proto_path}
+          //  `;
+            command = `npx protoc --js_out=${outputPath}  --proto_path=${proto_path} ${proto_file}`;
+
                 break;
             default:
                 throw new Error(`Unsupported language: ${language}`);
