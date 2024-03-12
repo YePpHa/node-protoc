@@ -8,7 +8,7 @@ uses the protoc binary and supports multiple platforms and processors.
 
 you can find  a demo in the scripts folder:
 
-```
+```JavaScript
 //test
 const { ProtobuffGenerator } = require('../index');
 
@@ -20,7 +20,7 @@ generator.generateProtobuf("go",dir,"helloworld.proto",dir)
 ## NPX and additional args
 
 you can use `npx protoc` or add your own arguments in the index.js:
-```
+```JavaScript
    switch (language) {
             case 'go':
                 // Example for Go --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative
