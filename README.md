@@ -6,17 +6,24 @@ uses the protoc binary and supports multiple platforms and processors.
 ## Install
 `npm i @ji-podhead/protoc-helper`
 
-you can find  a demo in the scripts folder:
-
+## How to use
+- import via npm install
 ```JavaScript
-//test
-const { ProtobuffGenerator } = require('../index');
+   const {ProtobuffGenerator} = require("@ji-podhead/protoc-helper")
+ ```
 
-console.log(__dirname)
+- import via git clone
+```JavaScript
+   const { ProtobuffGenerator } = require('../index');
+ ```
+- generate the protobuffs
+```JavaScript
 const dir = String(__dirname)+"/"
 const generator = new ProtobuffGenerator()
 generator.generateProtobuf("go",dir,"helloworld.proto",dir)
 ```
+- here were are using the helloworld protofile from the current directory.
+- you can find  a demoscript and the proto file in the scripts folder.
 ## NPX and additional args
 
 you can use `npx protoc` or add your own arguments in the index.js:
