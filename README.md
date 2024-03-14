@@ -24,7 +24,6 @@ npx protoch <language> <outputPath> <proto_file> <proto_path>
 ```JavaScript
 const dir = String(__dirname)+"/"
 ```
-
 ### generate the protobuffs
 
 - **`without instance` (array is supported)**
@@ -48,7 +47,9 @@ generator.generateProtobuf([["go",dir,"helloworld.proto",dir],["python",dir,"hel
 - here were are using the helloworld protofile from the current directory.
 - you can find  a demoscript and the proto file in the scripts folder.
 ---
+if you like this package, pls consider giving Jeppe’s and my repo a Star on github
 
+---
 ## Protobuf Plugin Installation
 
 ### Go
