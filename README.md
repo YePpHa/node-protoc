@@ -1,4 +1,5 @@
-[![npm version](https://badge.fury.io/js/@ji-podhead%2Fprotoc-helper.svg)](https://badge.fury.io/js/@ji-podhead%2Fprotoc-helper)
+[![npm version](https://badge.fury.io/js/protoc-helper.svg)](https://badge.fury.io/js/protoc-helper)
+
 # protoc-helper
 multilanguage  grpc protobuff generator for node. forked from [node-protoc](https://github.com/YePpHa/node-protoc) to add additional languages.
 uses the protoc binary and supports multiple platforms and processors. Please see [Protobuf Plugin Installation](https://github.com/ji-podhead/protoc-helper/edit/master/README.md#protobuf-plugin-installation) to install the required plugins for your target language.
@@ -17,7 +18,7 @@ npx protoch <language> <outputPath> <proto_file> <proto_path>
 ---
 - **Import**
 ```JavaScript
-   const {ProtobuffGenerator,createProtobuff} = require("@ji-podhead/protoc-helper")
+   const {ProtobuffGenerator,createProtobuff} = require("protoc-helper")
  ```
 
 - **create a path**

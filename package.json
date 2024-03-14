@@ -1,7 +1,7 @@
 {
-  "name": "@ji-podhead/protoc-helper",
-  "version": "1.0.7",
-  "description": "multilanguage  grpc protobuff generator for node. forked from node-protoc.git. ",
+  "name": "protoc-helper",
+  "version": "1.0.10",
+  "description": "multilanguage  grpc protobuff generator for node. uses the protoc binary and supports multiple platforms and processors. forked from node-protoc.git. ",
   "main": "index.js",
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
@@ -34,6 +34,7 @@
   },
   "keywords": [
     "protobuff_gen for node",
+    "protoc binary for node",
     "grpc",
     "protoc",
     "protoc-gen",
