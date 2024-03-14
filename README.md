@@ -2,7 +2,7 @@
 
 # protoc-helper
 A multilanguage  protoc protobuff generator for node. uses the protoc binary and supports multiple platforms and processors. forked from [node-protoc](https://github.com/YePpHa/node-protoc) to add additional languages.
-. Please see [Protobuf Plugin Installation](https://github.com/ji-podhead/protoc-helper/edit/master/README.md#protobuf-plugin-installation) to install the required plugins for your target language.
+. Please see [Protobuf Plugin Installation](https://github.com/ji-podhead/protoc-helper/tree/master?tab=readme-ov-file#protobuf-plugin-installation) to install the required plugins for your target language.
 
 ## Install
 - **local:**    `npm i protoc-helper`
