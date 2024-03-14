@@ -13,40 +13,40 @@ uses the protoc binary and supports multiple platforms and processors. Please se
   
 **CLI (via npx global install)**
 ```JavaScript
-npx protoch <language> <outputPath> <proto_file> <proto_path>
+npx protoch <lang> <out_path> <proto_file> <proto_path>
+npx protoc --go_out=<out_path> --proto_path=<proto_file_folder>  <proto_file> // exchange --go_out is using another lamguage
 ```
 ---
-- **Import**
+**via Script** <br>
+`without instance` (array is supported)
 ```JavaScript
-   const {ProtobuffGenerator,createProtobuff} = require("protoc-helper")
+createProtobuff( <lang> <output_path> <total_proto_file_path> )
+createProtobuff( <lang> <output_path> <proto_file_folder> <proto_file>)
+
+```
+`using class instance`
+```JavaScript
+generator.generateProtobuf( <lang> <output_path> <proto_file> <proto_file_folder>)
+```
+`usings array` for multiple files
+
+```JavaScript
+generator.generateProtobuf([[ <lang> <output_path> <proto_file> <proto_file_folder>],[ <lang> <output_path> <proto_file> <proto_file_folder> ]])
+```
+ **lang** — The programming language for which the Protobuf file should be generated.
+<br> **total_proto_file_path** — The path to the Proto file that should be used as the source.
+<br> **output_path** — The path where the generated Protobuf file should be saved
+<br> **proto_file** — The name of the proto file including the extension.
+<br> **proto_file_folder** — A path to a folder that holds a proto file.
+
+- **Example**
+```JavaScript
+const {ProtobuffGenerator,createProtobuff} = require("protoc-helper")
+const generator = new ProtobuffGenerator()
+const dir = String(__dirname)+"/"
+generator.generateProtobuf([["go",dir,"helloworld.proto",dir],["python",dir,"helloworld.proto",dir]])
  ```
 
-- **create a path**
-```JavaScript
-const dir = String(__dirname)+"/"
-```
-- **generate the protobuffs `without instance` (array is supported)**
-   
-```JavaScript
-createProtobuff("js",dir,path.join(dir,"helloworld.proto"))
-```
-
-- **generate the protobuffs `using class instance`**
-
-```JavaScript
-const generator = new ProtobuffGenerator()
-generator.generateProtobuf("python",dir,"helloworld.proto",dir)
-```
-- **generate the protobuffs `usings array` for multiple files**
-
-```JavaScript
-const generator = new ProtobuffGenerator()
-generator.generateProtobuf([["go",dir,"helloworld.proto",dir],["python",dir,"helloworld.proto",dir]])
-```
- **@param language** — The programming language for which the Protobuf file should be generated.
-<br> **@param proto_path** — The path to the Proto file that should be used as the source.
-<br> **@param outputPath** — The path where the generated Protobuf file should be saved
-<br> **@returns** — A promise that resolves with the output of the command execution or rejects with an error.
 
 
 ---
