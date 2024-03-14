@@ -7,14 +7,11 @@ uses the protoc binary and supports multiple platforms and processors. Please se
 - **local:**    `npm i @ji-podhead/protoc-helper`
 - **cli-tool:** `npx install protoch`
 ## How to use
-### CLI (via npx global install)
+**CLI (via npx global install)**
 ```JavaScript
-npx install protoch
 npx protoch <language> <outputPath> <proto_file> <proto_path>
 ```
 ---
-
-### LOCAL
 - **Import**
 ```JavaScript
    const {ProtobuffGenerator,createProtobuff} = require("@ji-podhead/protoc-helper")
@@ -24,21 +21,19 @@ npx protoch <language> <outputPath> <proto_file> <proto_path>
 ```JavaScript
 const dir = String(__dirname)+"/"
 ```
-### generate the protobuffs
-
-- **`without instance` (array is supported)**
+- **generate the protobuffs `without instance` (array is supported)**
    
 ```JavaScript
 createProtobuff("js",dir,path.join(dir,"helloworld.proto"))
 ```
 
-- **`using class instance`**
+- **generate the protobuffs `using class instance`**
 
 ```JavaScript
 const generator = new ProtobuffGenerator()
 generator.generateProtobuf("js",dir,"helloworld.proto",dir)
 ```
-- **`usings array` for multiple files**
+- **generate the protobuffs `usings array` for multiple files**
 
 ```JavaScript
 generator.generateProtobuf([["go",dir,"helloworld.proto",dir],["python",dir,"helloworld.proto",dir]])
