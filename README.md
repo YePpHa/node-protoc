@@ -36,6 +36,7 @@ generator.generateProtobuf("js",dir,"helloworld.proto",dir)
 - **generate the protobuffs `usings array` for multiple files**
 
 ```JavaScript
+const generator = new ProtobuffGenerator()
 generator.generateProtobuf([["go",dir,"helloworld.proto",dir],["python",dir,"helloworld.proto",dir]])
 ```
 ---
