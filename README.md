@@ -34,14 +34,14 @@ generator.generateProtobuf( <lang> <output_path> <proto_file> <proto_file_folder
 generator.generateProtobuf([[ <lang> <output_path> <proto_file> <proto_file_folder>],[ <lang> <output_path> <proto_file> <proto_file_folder> ]])
 ```
 ---
-**Arguments** <br>
- **lang** — The programming language for which the Protobuf file should be generated.
-<br> **total_proto_file_path** — The path to the Proto file that should be used as the source.
-<br> **output_path** — The path where the generated Protobuf file should be saved
-<br> **proto_file** — The name of the proto file including the extension.
-<br> **proto_file_folder** — A path to a folder that holds a proto file.
+### Arguments
+ **lang** The programming language for which the Protobuf file should be generated.
+<br> **total_proto_file_path** The path to the Proto file that should be used as the source.
+<br> **output_path** The path where the generated Protobuf file should be saved
+<br> **proto_file** The name of the proto file including the extension.
+<br> **proto_file_folder** A path to a folder that holds a proto file.
 
-- **Example**
+### Example
 ```JavaScript
 const {ProtobuffGenerator,createProtobuff} = require("protoc-helper")
 const generator = new ProtobuffGenerator()
