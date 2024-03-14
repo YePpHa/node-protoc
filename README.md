@@ -39,6 +39,12 @@ generator.generateProtobuf("js",dir,"helloworld.proto",dir)
 const generator = new ProtobuffGenerator()
 generator.generateProtobuf([["go",dir,"helloworld.proto",dir],["python",dir,"helloworld.proto",dir]])
 ```
+ **@param language** — The programming language for which the Protobuf file should be generated.
+<br> **@param proto_path** — The path to the Proto file that should be used as the source.
+<br> **@param outputPath** — The path where the generated Protobuf file should be saved
+<br> **@returns** — A promise that resolves with the output of the command execution or rejects with an error.
+
+
 ---
 - here were are using the helloworld protofile from the current directory.
 - you can find  a demoscript and the proto file in the scripts folder.
