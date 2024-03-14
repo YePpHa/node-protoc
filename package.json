@@ -1,6 +1,6 @@
 {
   "name": "@ji-podhead/protoc-helper",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "multilanguage  grpc protobuff generator for node. forked from node-protoc.git. ",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@ji-podhead/protoc-helper": "^1.0.3",
     "glob": "^7.2.3",
     "mkdirp": "^0.5.6",
     "node-fetch": "^3.2.10",
@@ -32,5 +31,25 @@
     "unzipper": "^0.10.11",
     "uuid": "^9.0.0",
     "vinyl": "^2.2.1"
-  }
+  },
+  "keywords": [
+    "protobuff_gen for node",
+    "grpc",
+    "protoc",
+    "protoc-gen",
+    "ts",
+    "go",
+"java",
+"python",
+"csharp",
+"ruby",
+"objc",
+"php",
+"dart",
+"rust",
+"swift",
+"kotlin",
+"scala",
+"js"
+ ]
 }
