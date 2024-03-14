@@ -4,7 +4,7 @@ multilanguage  grpc protobuff generator for node. forked from [node-protoc](http
 uses the protoc binary and supports multiple platforms and processors. Please see [Protobuf Plugin Installation](https://github.com/ji-podhead/protoc-helper/edit/master/README.md#protobuf-plugin-installation) to install the required plugins for your target language.
 
 ## Install
-- **local:**    `npm i @ji-podhead/protoc-helper`
+- **local:**    `npm i protoc-helper`
 - **cli-tool:** `npx install protoch`
 ## How to use 
 - you can find  a demoscript and the proto file in the scripts folder.
