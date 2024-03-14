@@ -33,6 +33,8 @@ generator.generateProtobuf( <lang> <output_path> <proto_file> <proto_file_folder
 ```JavaScript
 generator.generateProtobuf([[ <lang> <output_path> <proto_file> <proto_file_folder>],[ <lang> <output_path> <proto_file> <proto_file_folder> ]])
 ```
+---
+**Arguments** <br>
  **lang** — The programming language for which the Protobuf file should be generated.
 <br> **total_proto_file_path** — The path to the Proto file that should be used as the source.
 <br> **output_path** — The path where the generated Protobuf file should be saved
