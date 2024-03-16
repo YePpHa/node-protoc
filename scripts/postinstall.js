@@ -4,7 +4,7 @@ const unzip = require("unzipper");
 const mkdirp = require("mkdirp");
 const protoc = require("../protoc.js");
 
-const protoVersion = "3.20.3";
+const protoVersion = "26.0";
 
 const releases = {
   "win32_x86_32": `https://github.com/protocolbuffers/protobuf/releases/download/v${protoVersion}/protoc-${protoVersion}-win32.zip`,
