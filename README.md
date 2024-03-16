@@ -20,7 +20,7 @@ npx protoc --go_out=<out_path> --proto_path=<proto_file_folder>  <proto_file> //
 ```
 ---
 **via Script** <br>
-`without instance` (array is supported)
+`without instance` (array not supported)
 ```JavaScript
 createProtobuff( <lang> <output_path> <absolute_proto_file_path> )
 createProtobuff( <lang> <output_path> <proto_file_folder> <proto_file>)
