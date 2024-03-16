@@ -2,8 +2,6 @@
 [![NPM Downloads](https://img.shields.io/npm/dw/protoc-helper.svg)](https://www.npmjs.com/package/protoc-helper)
 [![npm version](https://img.shields.io/badge/protoc-binary-blue)](https://www.npmjs.com/package/protoc-helper)
 # protoc-helper
-> WAS MOVED TO [PROTOC-HELPER!!](https://www.npmjs.com/package/protoc-helper)
-
 A multilanguage  protoc protobuff generator for node. uses the protoc binary and supports multiple platforms and processors. forked from [node-protoc](https://github.com/YePpHa/node-protoc) to add additional languages.
 . Please see [Protobuf Plugin Installation](https://github.com/ji-podhead/protoc-helper/tree/master?tab=readme-ov-file#protobuf-plugin-installation) to install the required plugins for your target language.
 
@@ -23,7 +21,7 @@ npx protoc --go_out=<out_path> --proto_path=<proto_file_folder>  <proto_file> //
 **via Script** <br>
 `without instance` (array is supported)
 ```JavaScript
-createProtobuff( <lang> <output_path> <total_proto_file_path> )
+createProtobuff( <lang> <output_path> <absolute_proto_file_path> )
 createProtobuff( <lang> <output_path> <proto_file_folder> <proto_file>)
 
 ```
