@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/protoc-helper.svg)](https://badge.fury.io/js/protoc-helper)
-
+![NPM Downloads](https://img.shields.io/npm/dw/protoc-helper.svg)
+![npm version](https://img.shields.io/badge/protoc-binary-blue)
 # protoc-helper
 A multilanguage  protoc protobuff generator for node. uses the protoc binary and supports multiple platforms and processors. forked from [node-protoc](https://github.com/YePpHa/node-protoc) to add additional languages.
 . Please see [Protobuf Plugin Installation](https://github.com/ji-podhead/protoc-helper/tree/master?tab=readme-ov-file#protobuf-plugin-installation) to install the required plugins for your target language.
