@@ -49,7 +49,6 @@ const generator = new ProtobuffGenerator()
 const dir = String(__dirname)+"/"
 generator.generateProtobuf([["go",dir,"helloworld.proto",dir],["python",dir,"helloworld.proto",dir]])
  ```
-> why is my syntax so oldschool. guess i havent worked with js in a while. i need to use {args} for constructor and get rid of the super old import syntax. but it works, so i just leave that for now
 
 
 ---
