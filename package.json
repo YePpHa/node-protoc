@@ -1,7 +1,7 @@
 {
-  "name": "protoc",
+  "name": "@q4justice/protoc-installer",
   "version": "1.1.3",
-  "description": "A tool for converting proto buffers (.proto) files into javascript files usable in Closure Compiler with Closure Library.",
+  "description": "npm installer for protoc, forked from YePpHa/node-protoc",
   "main": "index.js",
   "scripts": {
     "postinstall": "node scripts/install-protoc.js",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YePpHa/node-protoc.git"
+    "url": "git+https://github.com/Q4Justice/protoc-installer.git"
   },
   "dependencies": {
     "glob": "^7.2.3",
