@@ -6,7 +6,7 @@ Forked from [YePpHa/node-protoc](https://github.com/YePpHa/node-protoc).
 
 ## Version
 
-The `protoc` version is at `v3.20.3`.
+The `protoc` version is at `v3.17.3`.
 
 ## Usage
 
