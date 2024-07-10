@@ -1,0 +1,19 @@
+name: 'Publish'
+on:
+  push:
+    branches: [ main ]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      - run: 'npm install'
+      - run: 'npm publish --registry=https://npm.pkg.github.com --scope=@q4justice'
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
