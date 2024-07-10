@@ -16,6 +16,9 @@
     "type": "git",
     "url": "git+https://github.com/Q4Justice/protoc-installer.git"
   },
+  "publishConfig": {
+    "@q4justice:registry": "https://npm.pkg.github.com/"
+  },
   "dependencies": {
     "glob": "^7.2.3",
     "mkdirp": "^0.5.6",
