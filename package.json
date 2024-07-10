@@ -1,6 +1,6 @@
 {
   "name": "@q4justice/protoc",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A tool to install protoc as an npm package and to converting proto buffers files into JavaScript files.",
   "main": "index.js",
   "scripts": {
