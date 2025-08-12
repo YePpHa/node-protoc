@@ -5,8 +5,6 @@ A wrapper in Node for the compiled protoc from https://github.com/protocolbuffer
 >
 > Starting with version v21.0.x, the npm package [protoc](https://www.npmjs.com/package/protoc)
 > is maintained in the repository https://github.com/timostamm/protobuf-npm.
-> For every release of `protoc` in https://github.com/protocolbuffers/protobuf, the
-> repository automatically creates a release with the same version number on npmjs.com.
 >
 > You can install the latest version with:
 >
