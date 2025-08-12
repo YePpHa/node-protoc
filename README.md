@@ -5,7 +5,6 @@ A wrapper in Node for the compiled protoc from https://github.com/protocolbuffer
 >
 > Starting with version v21.0.x, the npm package [protoc](https://www.npmjs.com/package/protoc)
 > is maintained in the repository https://github.com/timostamm/protobuf-npm.
->
 > For every release of `protoc` in https://github.com/protocolbuffers/protobuf, the
 > repository automatically creates a release with the same version number on npmjs.com.
 >
@@ -18,7 +17,7 @@ A wrapper in Node for the compiled protoc from https://github.com/protocolbuffer
 >
 > Note that the JavaScript generator has been removed from `protoc`, and lives in a
 > separate repository now: https://github.com/protocolbuffers/protobuf-javascript
-> Consequently, the npm `protoc` no longer provides an API to generate JavaScript
+> Consequently, the package `protoc` no longer provides an API to generate JavaScript
 > code.
 
 The information below applies to the package `protoc` version 1.1.3 and earlier:
