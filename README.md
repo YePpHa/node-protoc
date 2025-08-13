@@ -16,7 +16,38 @@ A wrapper in Node for the compiled protoc from https://github.com/protocolbuffer
 > Note that the JavaScript generator has been removed from `protoc`, and lives in a
 > separate repository now: https://github.com/protocolbuffers/protobuf-javascript
 > Consequently, the package `protoc` no longer provides an API to generate JavaScript
-> code.
+> code, but you can easily achieve the same functionality with a small function.
+> 
+> <details><summary>Example script to call protoc from JS</summary>
+>
+> ```ts
+> import { spawnSync } from "node:child_process";
+> import { mkdtempSync, readdirSync, statSync } from "node:fs";
+> import { join } from "node:path";
+> import { tmpdir } from "node:os";
+>
+> function compile(files: string[]): string[] {
+>   const out = mkdtempSync(join(tmpdir(), "protoc-output"));
+>   // Just as an example, use --php_out to generate PHP code
+>   const ret = spawnSync(
+>     "protoc", ["--php_out=" + out, ...files],
+>     { encoding: "utf8"},
+>   );
+>   if (ret.status !== 0) {
+>     throw new Error(ret.stderr);
+>   }
+>   return readdirSync(out, { recursive: true, encoding: "utf8" }).filter((f) =>
+>     statSync(join(out, f)).isFile(),
+>   );
+> }
+>
+> // Run with `npx node example.ts`
+> console.log(compile(["proto/msg.proto"])); // [ 'Msg.php', 'GPBMetadata/Proto/Msg.php' ]
+> ```
+
+</details>
+
+
 
 The information below applies to the package `protoc` version 1.1.3 and earlier:
 
