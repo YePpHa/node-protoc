@@ -3,6 +3,8 @@ const path = require("path");
 const unzip = require("unzipper");
 const mkdirp = require("mkdirp");
 const protoc = require("../protoc.js");
+const { HttpsProxyAgent } = require("https-proxy-agent");
+const { HttpProxyAgent } = require("http-proxy-agent");
 
 const protoVersion = "3.20.3";
 
@@ -27,7 +29,14 @@ const protocDirectory = path.join(__dirname, "..", "protoc");
   fs.rmSync(protocDirectory, { recursive: true, force: true });
 
   const fetch = await import("node-fetch");
-  const response = await fetch.default(releases[release]);
+
+  let agent = null;
+  if (process.env.HTTPS_PROXY || process.env.HTTP_PROXY) {
+    const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY;
+    agent = proxyUrl.startsWith("https") ? new HttpsProxyAgent(proxyUrl) : new HttpProxyAgent(proxyUrl);
+  }
+
+  const response = await fetch.default(releases[release], {agent});
   response
     .body
     .pipe(unzip.Parse())
